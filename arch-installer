@@ -1106,34 +1106,34 @@ install_part2() {
     sudo rm -rf /etc/mkinitcpio.d/*
 
     alert "Installing Linux kernel ..."
-    acu -y install $install_kernel $install_kernel-headers
+    acu install $install_kernel $install_kernel-headers
 
     ################################################################
     # Install Kernel Additional Packages
     alert "Installing Kernel Additional Packages ..."
     if [ -n "$install_kernel_additional" ]; then
-        acu -y install $install_kernel_additional
+        acu install $install_kernel_additional
     fi
 
     ################################################################
     # Install Linux Firmware
     alert "Installing Linux Firmware ..."
     if [ -n "$install_firmware" ]; then
-        acu -y install $install_firmware
+        acu install $install_firmware
     fi
 
     ################################################################
     # Install Graphics Acceleration
     alert "Installing Graphics Acceleration"
     if [ -n "$install_graphics" ]; then
-        acu -y install $install_graphics
+        acu install $install_graphics
     fi
 
     ################################################################
     # Install Video Acceleration
     alert "Installing Video Acceleration"
     if [ -n "$install_video" ]; then
-        acu -y install $install_video
+        acu install $install_video
     fi
 
     ################################################################
@@ -1153,7 +1153,7 @@ install_part2() {
     # Install Additional Packages
     alert "Installing Additional Packages"
     if [ -n "$install_additional_packages" ]; then
-        acu -y install $install_additional_packages
+        acu install $install_additional_packages
     fi
 
     ################################################################
