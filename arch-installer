@@ -1129,7 +1129,7 @@ install_part2() {
     ################################################################
     # Full System Upgrade
     alert "Performing Full System Upgrade ..."
-    sudo pacman -Syyu --noconfirm
+    # sudo pacman -Syyu --noconfirm
 
     ################################################################
     # Install desktop environment
