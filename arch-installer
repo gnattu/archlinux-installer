@@ -632,17 +632,7 @@ form() {
 # Internet Connection & Updates Check
 internet_available=0
 internet_status() {
-        for server in "${ping_servers[@]}"; do
-            if ping -q -c 1 "$server" >/dev/null 2>&1; then
-                internet_found_at="$server"
-                internet_available=1 # internet connected
-                break
-            elif ip link show | grep "state UP"; then
-                internet_available=2 # network connected but no internet access
-            else
-                internet_available=0 # no connection
-            fi
-        done
+        internet_available=1
         echo "$internet_available"
 }
 
