@@ -1044,9 +1044,9 @@ install_part1() {
         rm -rf /etc/systemd/system/installer.service
     fi
 
-    mkdir -p /etc/systemd/system/getty@tty1.service.d
-    echo -e "[Service]\nExecStart=\nExecStart=-/sbin/agetty -o '-p -f -- \\u' --noclear --autologin $install_username %I \$TERM" | tee /etc/systemd/system/getty@tty1.service.d/autologin.conf
-    echo "installer $installation_file --part2" | tee -a /home/$install_username/.bashrc
+    #mkdir -p /etc/systemd/system/getty@tty1.service.d
+    #echo -e "[Service]\nExecStart=\nExecStart=-/sbin/agetty -o '-p -f -- \\u' --noclear --autologin $install_username %I \$TERM" | tee /etc/systemd/system/getty@tty1.service.d/autologin.conf
+    #echo "installer $installation_file --part2" | tee -a /home/$install_username/.bashrc
 
     alert "System will reboot now."
     if ! systemctl soft-reboot; then
